@@ -3,7 +3,7 @@ First Example of SOLID principle (ISP) violation
 
 
 ## Refactoring the abstraction to remove the Interface Segregation Principle
-1. Use the IDE and select the option Refactor/Extract Interface
+1. Use the IDE and select the option Refactor/Extract Interface for the CoffeeMachine
     - Select option "Rename original class and use interface where possible"
     - Rename the original class to FilterCoffeeMachine
     - Select "addGroundCoffee" method to form the interface
