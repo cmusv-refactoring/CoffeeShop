@@ -31,6 +31,7 @@ public class EspressoMachine implements CoffeeMachine {
                 throw new CoffeeException(
                         "Only one kind of coffee supported for each CoffeeSelection.");
             }
+            System.out.println("Added Coffee " + this.groundCoffee.getName());
         } else {
             this.groundCoffee = newCoffee;
         }
@@ -44,6 +45,12 @@ public class EspressoMachine implements CoffeeMachine {
     @Override
     public CoffeeDrink brewEspresso() {
         MachineConfiguration config = configMap.get(CoffeeSelection.ESPRESSO);
+
+        try {
+            addGroundCoffee(this.groundCoffee);
+        } catch (CoffeeException e) {
+            throw new RuntimeException(e);
+        }
 
         // brew a filter coffee
         return this.brewingUnit.brew(CoffeeSelection.ESPRESSO,
